@@ -1,0 +1,175 @@
+*,
+*:after,
+*:before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+* {
+  font-family: var(--bth-app-font-family-primary);
+}
+
+a:focus {
+  outline: 1px dotted var(--bth-app-gray-dark-30);
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 6px;
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bth-app-gray-light-30);
+}
+::-webkit-scrollbar-corner {
+  background: var(--bth-app-gray-light-40);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--bth-app-gray);
+  border-radius: 1px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.menu-vertical__item {
+  position: relative;
+}
+.menu-vertical__item--sem-icone {
+  padding: 0px 15px;
+}
+.menu-vertical__item--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.menu-vertical__item--active {
+  background-color: var(--bth-app-gray-light-10);
+}
+.menu-vertical__item--active > a bth-icone,
+.menu-vertical__item--active > a span {
+  color: var(--bth-app-blue-dark-10);
+}
+.menu-vertical__item--active > a span {
+  font-weight: var(--bth-app-font-weight-semi-bold);
+}
+.menu-vertical__item--active:before {
+  content: "";
+  position: absolute;
+  border: 2px var(--bth-app-blue) solid;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.menu-vertical__item--has-children:not(.menu-vertical__item--collapsed) {
+  background-color: var(--bth-app-gray-light-20);
+}
+.menu-vertical__item--collapsed bth-icone:last-child {
+  transform: rotate(0.5turn);
+}
+.menu-vertical__item--collapsed > .menu-vertical__list {
+  max-height: 0 !important;
+}
+.menu-vertical__item--floating {
+  background-color: var(--bth-app-gray-light-20);
+  border-top: 0;
+}
+.menu-vertical__item--floating > a > span {
+  opacity: 0;
+}
+.menu-vertical__item--floating > a:hover > bth-icone:last-of-type {
+  transform: rotate(0.1turn);
+  transition: transform var(--bth-app-transition-delay) cubic-bezier(0.5, 0, 0.1, 1);
+}
+.menu-vertical__item--floating > a:hover > span {
+  opacity: 1;
+  transition: opacity var(--bth-app-transition-delay) cubic-bezier(0.5, 0, 0.1, 1);
+}
+.menu-vertical__item--floating > a:focus {
+  outline: 1px dotted var(--bth-app-gray-dark-30);
+  outline-offset: -1px;
+}
+.menu-vertical__item a {
+  align-items: center;
+  display: flex;
+  width: 100%;
+  color: var(--bth-app-gray-dark-20);
+  font-weight: var(--bth-app-font-weight-regular);
+  height: 44px;
+  text-decoration: none;
+  overflow: hidden;
+  padding: 0px 9px 0px 0px;
+}
+.menu-vertical__item a:hover, .menu-vertical__item a:focus {
+  background-color: #e1e3e6;
+  text-decoration: none;
+  color: var(--bth-app-gray-dark-30);
+}
+.menu-vertical__item a:focus {
+  outline: 1px dotted var(--bth-app-gray-dark-30);
+  outline-offset: -1px;
+}
+.menu-vertical__item a bth-icone:first-child, .menu-vertical__item a bth-icone:last-child {
+  display: block;
+  margin: auto 16px;
+  min-width: 18px;
+  width: 18px;
+  font-size: 18px;
+}
+.menu-vertical__item a span {
+  flex: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 100%;
+}
+.menu-vertical__item .menu-vertical__list {
+  border-top: 0;
+  max-height: 100vh;
+  overflow: hidden;
+  transition: max-height var(--bth-app-transition-delay) cubic-bezier(0.5, 0, 0.1, 1);
+}
+.menu-vertical__item .menu-vertical__list li {
+  display: inline-block;
+  width: 100%;
+}
+
+.menu-vertical__submenu a {
+  height: 36px;
+  padding: 12px 10px 12px 53px;
+  cursor: pointer;
+}
+.menu-vertical__submenu a:focus {
+  outline: 1px dotted var(--bth-app-gray-dark-30);
+  outline-offset: -1px;
+}
+
+.badge {
+  background-color: var(--bth-app-gray-light-40);
+  color: var(--bth-app-gray-dark-30);
+  border-radius: 50px;
+  font-size: 11px;
+  padding: 2px 5px;
+  margin-left: 5px;
+  line-height: 1;
+}
+
+.badge-vertical-floating {
+  position: absolute;
+  background-color: var(--bth-app-red);
+  color: var(--bth-app-gray-light-40);
+  font-size: 10px;
+  right: 5px;
+  top: 11px;
+}
+
+@media (max-width: 991px) {
+  .menu-vertical__item a {
+    height: 54px;
+    font-size: 18px;
+  }
+  .menu-vertical__item a bth-icone:first-child, .menu-vertical__item a bth-icone:last-child {
+    font-size: 20px;
+  }
+}

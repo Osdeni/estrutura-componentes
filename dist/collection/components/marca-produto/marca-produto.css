@@ -1,0 +1,375 @@
+@charset "UTF-8";
+*,
+*:after,
+*:before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+* {
+  font-family: var(--bth-app-font-family-primary);
+}
+
+a:focus {
+  outline: 1px dotted var(--bth-app-gray-dark-30);
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 6px;
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bth-app-gray-light-30);
+}
+::-webkit-scrollbar-corner {
+  background: var(--bth-app-gray-light-40);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--bth-app-gray);
+  border-radius: 1px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+a {
+  color: var(--bth-app-blue);
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:focus,
+a:hover {
+  color: var(--bth-app-blue-dark-10);
+  text-decoration: underline;
+}
+
+.marca-produto {
+  align-items: center;
+  border: 0;
+  color: var(--bth-app-gray-light-40);
+  display: flex;
+  height: 100%;
+  justify-content: start;
+  position: relative;
+  font-size: 18px;
+  font-family: inherit;
+  text-transform: uppercase;
+  padding: 0px 14px;
+  cursor: pointer;
+}
+.marca-produto--active {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.marca-produto:before {
+  content: "";
+  height: 22px;
+  width: 26px;
+  background-image: url("https://cdn.betha.cloud/plataforma/design/kare/framework/0.1.6/assets/images/betha.svg");
+  background-repeat: no-repeat;
+  margin-right: 6px;
+}
+.marca-produto .marca-produto span {
+  padding-top: 1px;
+}
+.marca-produto:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+}
+
+.marca-produto__detalhes {
+  cursor: default !important;
+  visibility: hidden;
+  position: absolute;
+  background-color: var(--bth-app-gray-light-40);
+  min-width: 462px;
+  max-width: 462px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  z-index: 1080;
+  top: 40px;
+  text-transform: none;
+  color: var(--bth-app-gray-dark-30);
+  left: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 400px;
+}
+.marca-produto__detalhes--show {
+  visibility: visible;
+}
+.marca-produto__detalhes-solucoes__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.marca-produto__detalhes-solucoes__header h4 {
+  flex: 1;
+  text-align: left;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+.marca-produto__detalhes-solucoes__header a {
+  font-size: 14px;
+  text-align: right;
+}
+.marca-produto__detalhes-solucoes__header button {
+  color: var(--bth-app-gray) !important;
+  border-radius: 2px;
+  border: none;
+  padding: 10px 16px;
+  font-size: 22px;
+  background-color: transparent;
+  margin-right: -15px;
+}
+.marca-produto__detalhes-solucoes__body {
+  text-align: center;
+}
+.marca-produto__detalhes-solucoes__body .empty-state-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1.3em 1em;
+  justify-content: center;
+  align-items: center;
+}
+.marca-produto__detalhes-solucoes__body .empty-state-container .empty-list-store {
+  background-image: url("https://cdn.betha.cloud/plataforma/design/kare/framework/0.1.6/assets/images/empty-store.svg");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: 220px;
+  height: 180px;
+  width: 220px;
+}
+.marca-produto__detalhes-solucoes__body .empty-state-container .empty-inconsistency {
+  background-image: url("https://cdn.betha.cloud/plataforma/design/kare/framework/0.1.6/assets/images/empty-inconsistencia-marca-produto-alerta.svg");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: 96px;
+  height: 96px;
+  width: 96px;
+}
+.marca-produto__detalhes-solucoes__body .empty-state-container h3 {
+  padding-top: 20px;
+  font-weight: var(--bth-app-font-weight-regular);
+  font-size: 16px;
+}
+.marca-produto__detalhes-solucoes__body .empty-state-container a {
+  font-size: 16px;
+}
+.marca-produto__detalhes-solucoes__body .marca-produto__detalhes-solucoes__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-gap: 0.5em;
+  padding: 16px 0px 0px 0px;
+  list-style: none;
+}
+.marca-produto__detalhes-solucoes__body .marca-produto__detalhes-solucoes__list li .marca-produto__detalhes-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  height: 100px;
+}
+.marca-produto__detalhes-solucoes__body .marca-produto__detalhes-solucoes__list li .marca-produto__detalhes-card .marca-produto__detalhes__brand {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-transform: none;
+  text-align: center;
+}
+.marca-produto__detalhes-solucoes__body .marca-produto__detalhes-solucoes__list li .marca-produto__detalhes-card .marca-produto__detalhes__brand svg {
+  width: 30px;
+  height: 30px;
+}
+.marca-produto__detalhes-solucoes__body .marca-produto__detalhes-solucoes__list li .marca-produto__detalhes-card .marca-produto__detalhes__name {
+  font-size: 12px;
+  margin-top: 10px;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--bth-app-gray-dark-30);
+}
+
+.marca-produto__detalhes-card {
+  background-color: var(--bth-app-gray-light-40);
+  border-radius: 2px;
+  position: relative;
+}
+.marca-produto__detalhes-card__body {
+  margin: 12px 4px 6px 4px;
+  padding: 0 10px;
+}
+.marca-produto__detalhes-card--bordered {
+  border: 1px solid var(--bth-app-gray-light-10);
+}
+.marca-produto__detalhes-card--clickable:hover {
+  border: 1px solid var(--bth-app-blue);
+  cursor: pointer;
+}
+
+.block-text--hidden {
+  display: block;
+  max-width: 100%;
+  height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bth,
+.BTH {
+  background: var(--bth-app-brand-color-default) !important;
+  fill: var(--bth-app-brand-color-default);
+}
+
+/* Gestão Municipal */
+.MUN,
+.mun {
+  fill: var(--bth-app-brand-brown);
+  border-color: var(--bth-app-brand-brown);
+}
+
+/* Planejamento e Contabilidade */
+.PLA,
+.pla {
+  fill: var(--bth-app-brand-lilac);
+  border-color: var(--bth-app-brand-lilac);
+}
+
+/* Arrecadação e Fiscalização */
+.ARR,
+.arr {
+  fill: var(--bth-app-brand-lime);
+  border-color: var(--bth-app-brand-lime);
+}
+
+/* Atendimento */
+.ATE,
+.ate {
+  fill: var(--bth-app-brand-gray);
+  border-color: var(--bth-app-brand-gray);
+}
+
+/* Gestão de Compras e Contratos */
+.COM,
+.com {
+  fill: var(--bth-app-brand-red);
+  border-color: var(--bth-app-brand-red);
+}
+
+/* Pessoal e Recursos Humanos */
+.PES,
+.pes {
+  fill: var(--bth-app-brand-blue);
+  border-color: var(--bth-app-brand-blue);
+}
+
+/* Saúde e Assistência Social */
+.SAU,
+.sau {
+  fill: var(--bth-app-brand-green);
+  border-color: var(--bth-app-brand-green);
+}
+
+/* Educação e Gestão Escolar */
+.EDU,
+.edu {
+  fill: var(--bth-app-brand-yellow);
+  border-color: var(--bth-app-brand-yellow);
+}
+
+/* Gestão de Leis Municipais */
+.LEI,
+.lei {
+  fill: var(--bth-app-brand-orange);
+  border-color: var(--bth-app-brand-orange);
+}
+
+/* Componentes Genéricos e Performance Corporativa */
+.GEN,
+.gen,
+.PEC,
+.pec {
+  fill: #06a;
+  border-color: #06a;
+}
+
+.SUP,
+.sup {
+  fill: #23313f;
+  border-color: #23313f;
+}
+
+.loader-wrapper {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 349px;
+}
+.loader-wrapper--show {
+  display: flex;
+}
+
+/* Media queries */
+@media (max-width: 991px) {
+  .marca-produto__detalhes {
+    position: fixed;
+    background-color: var(--bth-app-gray-light-40);
+    -webkit-box-shadow: inset;
+    box-shadow: inset;
+    top: 0;
+    max-height: 100vh;
+    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .marca-produto__detalhes--show {
+    display: block;
+  }
+  .marca-produto__detalhes-solucoes__header h4 {
+    font-size: 20px;
+  }
+  .marca-produto__detalhes-solucoes__body .empty-state-container {
+    height: 80vh;
+  }
+  .marca-produto__detalhes-solucoes__body .empty-state-container .empty-list-store {
+    width: 60%;
+  }
+  .marca-produto__detalhes-solucoes__body .empty-state-container h3 {
+    font-size: 24px;
+  }
+  .marca-produto__detalhes-solucoes__body .empty-state-container a {
+    font-size: 24px;
+  }
+  .marca-produto__detalhes-solucoes__body .marca-produto__detalhes-solucoes__list {
+    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  }
+
+  .loader-wrapper {
+    height: 80vh;
+  }
+}
+@media (max-width: 576px) {
+  .marca-produto__detalhes-solucoes__body .empty-state-container .empty-list-store {
+    width: 85%;
+  }
+  .marca-produto__detalhes-solucoes__body .empty-state-container .empty-inconsistency {
+    width: 85%;
+  }
+  .marca-produto__detalhes-solucoes__body .empty-state-container h3 {
+    font-size: 20px;
+  }
+  .marca-produto__detalhes-solucoes__body .empty-state-container a {
+    font-size: 20px;
+  }
+}

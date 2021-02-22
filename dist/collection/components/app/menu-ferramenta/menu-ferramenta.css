@@ -1,0 +1,106 @@
+*,
+*:after,
+*:before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+* {
+  font-family: var(--bth-app-font-family-primary);
+}
+
+a:focus {
+  outline: 1px dotted var(--bth-app-gray-dark-30);
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 6px;
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bth-app-gray-light-30);
+}
+::-webkit-scrollbar-corner {
+  background: var(--bth-app-gray-light-40);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--bth-app-gray);
+  border-radius: 1px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.ferramenta-menu__desktop-toggler {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.ferramenta-menu__desktop-toggler--active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.ferramenta-menu__desktop-toggler ::slotted(i),
+.ferramenta-menu__desktop-toggler ::slotted(bth-icone) {
+  font-size: 18px;
+}
+.ferramenta-menu__desktop-toggler ::slotted(img),
+.ferramenta-menu__desktop-toggler ::slotted(svg) {
+  vertical-align: middle;
+  box-sizing: border-box;
+  margin: 7px 14px;
+  display: unset;
+  border-radius: 100%;
+  width: 24px;
+  height: 24px;
+}
+.ferramenta-menu__desktop-toggler ::slotted(bth-avatar) {
+  vertical-align: middle;
+  box-sizing: border-box;
+  margin: 8px 14px;
+  display: unset;
+  border-radius: 100%;
+  width: 24px;
+  height: 24px;
+}
+.ferramenta-menu__desktop-toggler a {
+  color: var(--bth-app-gray-light-40);
+  text-decoration: none;
+  padding: 7px 11px 8px 11px;
+}
+.ferramenta-menu__desktop-toggler a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.ferramenta-menu__desktop-toggler a:focus {
+  outline: 1px dotted var(--bth-app-gray-light-10);
+  outline-offset: -2px;
+}
+
+.ferramenta-menu__mobile-toggler {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid var(--bth-app-gray-light-10);
+}
+.ferramenta-menu__mobile-toggler a {
+  width: 100%;
+  padding: 14px 12px;
+  text-decoration: none;
+  color: var(--bth-app-gray-dark-30);
+  font-size: 16px;
+}
+.ferramenta-menu__mobile-toggler a:hover {
+  background-color: var(--bth-app-gray-light-30);
+}
+.ferramenta-menu__mobile-toggler a ::slotted(i),
+.ferramenta-menu__mobile-toggler a ::slotted(bth-icone) {
+  color: var(--bth-app-gray-dark-20);
+  font-size: 20px;
+}
+.ferramenta-menu__mobile-toggler a ::slotted(span) {
+  text-decoration: none;
+  padding: 0 16px;
+}

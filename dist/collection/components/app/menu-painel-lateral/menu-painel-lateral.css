@@ -1,0 +1,109 @@
+*,
+*:after,
+*:before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+* {
+  font-family: var(--bth-app-font-family-primary);
+}
+
+a:focus {
+  outline: 1px dotted var(--bth-app-gray-dark-30);
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 6px;
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bth-app-gray-light-30);
+}
+::-webkit-scrollbar-corner {
+  background: var(--bth-app-gray-light-40);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--bth-app-gray);
+  border-radius: 1px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.painel-lateral {
+  box-sizing: border-box;
+  color: var(--bth-app-gray-dark-30);
+  background-color: var(--bth-app-gray-light-40);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  position: fixed;
+  opacity: 0;
+  height: calc(100vh - 40px);
+  top: 40px;
+  right: 0;
+  transform: translateX(100%);
+  transition: transform var(--bth-app-transition-delay) cubic-bezier(0.5, 0, 0.1, 1), opacity var(--bth-app-transition-delay) cubic-bezier(0.5, 0, 0.1, 1), height var(--bth-app-transition-delay) cubic-bezier(0.5, 0, 0.1, 1), top var(--bth-app-transition-delay) cubic-bezier(0.5, 0, 0.1, 1);
+  width: 375px;
+  z-index: 1070;
+  padding: 16px;
+}
+.painel-lateral--show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.painel-lateral--banner {
+  height: calc(100vh - 80px);
+  top: 80px;
+}
+.painel-lateral header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.painel-lateral header h3 {
+  font-size: 20px;
+  font-weight: var(--bth-app-font-weight-regular);
+}
+.painel-lateral .btn-back {
+  display: none;
+  color: var(--bth-app-gray-dark-20);
+  border-radius: 2px;
+  border: none;
+  padding: 0px 8px;
+  font-size: 22px;
+  background-color: transparent;
+  margin: 0 0 0 -10px;
+  cursor: pointer;
+}
+.painel-lateral .btn-close {
+  display: none;
+  color: #767676;
+  cursor: pointer;
+  color: silver !important;
+  border-radius: 2px;
+  border: none;
+  padding: 0px 8px;
+  font-size: 22px;
+  background-color: transparent;
+  margin-right: -10px;
+}
+
+/* Media queries */
+@media (max-width: 991px) {
+  .painel-lateral {
+    top: -50px;
+    height: 100vh;
+    width: 100%;
+  }
+  .painel-lateral .btn-back {
+    display: block;
+  }
+  .painel-lateral .btn-close {
+    display: block;
+  }
+}

@@ -1,0 +1,82 @@
+*,
+*:after,
+*:before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+* {
+  font-family: var(--bth-app-font-family-primary);
+}
+
+a:focus {
+  outline: 1px dotted var(--bth-app-gray-dark-30);
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 6px;
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bth-app-gray-light-30);
+}
+::-webkit-scrollbar-corner {
+  background: var(--bth-app-gray-light-40);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--bth-app-gray);
+  border-radius: 1px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.desktop {
+  display: block;
+  position: relative;
+}
+.desktop bth-icone {
+  font-size: 18px;
+}
+.desktop .badge {
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
+  display: inline-block;
+  position: absolute;
+  min-width: 10px;
+  text-align: center;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: var(--bth-app-font-weight-semi-bold);
+  padding: 2px 5px;
+  background-color: var(--bth-app-red);
+  color: var(--bth-app-gray-light-40);
+  right: -5px;
+}
+
+.mobile {
+  display: inline-block;
+  flex-direction: row;
+  align-items: center;
+}
+.mobile .badge {
+  white-space: nowrap;
+  display: inline-block;
+  min-width: 10px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: var(--bth-app-font-weight-semi-bold);
+  position: absolute;
+  margin: -2px -12px;
+  padding: 1px 5px;
+  background-color: var(--bth-app-red);
+  color: var(--bth-app-gray-light-40);
+}
+.mobile bth-icone {
+  color: var(--bth-app-gray-dark-20);
+  font-size: 20px;
+}

@@ -1,0 +1,71 @@
+*,
+*:after,
+*:before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+* {
+  font-family: var(--bth-app-font-family-primary);
+}
+
+a:focus {
+  outline: 1px dotted var(--bth-app-gray-dark-30);
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 6px;
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bth-app-gray-light-30);
+}
+::-webkit-scrollbar-corner {
+  background: var(--bth-app-gray-light-40);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--bth-app-gray);
+  border-radius: 1px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.empty-ajuda {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+.empty-ajuda__img {
+  background-image: url("https://cdn.betha.cloud/plataforma/design/kare/framework/0.1.6/assets/images/empty-help.svg");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: 130px;
+  height: 130px;
+  width: 130px;
+}
+.empty-ajuda h4 {
+  font-size: 20px;
+  font-weight: var(--bth-app-font-weight-regular);
+  margin: 24px 0px;
+}
+.empty-ajuda h4 a {
+  text-decoration: none;
+  color: var(--bth-app-blue);
+}
+.empty-ajuda h4 a:hover {
+  color: var(--bth-app-blue-dark-10);
+  text-decoration: underline;
+}
+
+.descricao-mobile {
+  text-decoration: none;
+  padding: 0 16px;
+}

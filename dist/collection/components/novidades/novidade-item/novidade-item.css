@@ -1,0 +1,103 @@
+*,
+*:after,
+*:before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+* {
+  font-family: var(--bth-app-font-family-primary);
+}
+
+a:focus {
+  outline: 1px dotted var(--bth-app-gray-dark-30);
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 6px;
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bth-app-gray-light-30);
+}
+::-webkit-scrollbar-corner {
+  background: var(--bth-app-gray-light-40);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--bth-app-gray);
+  border-radius: 1px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.lista__item {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--bth-app-gray-light-10);
+  padding: 12px 8px;
+}
+.lista__item--unread {
+  cursor: pointer;
+}
+.lista__item:hover,
+.lista__item :focus {
+  background-color: var(--bth-app-gray-light-30);
+}
+.lista__item--body {
+  display: flex;
+}
+.lista__item--body .icone-gift {
+  width: 34px;
+  display: flex;
+  justify-content: center;
+  margin-right: 12px;
+  margin-top: -5px;
+  font-size: 28px;
+  color: var(--bth-app-purple);
+}
+.lista__item--body .marcar-leitura__toggler {
+  width: auto;
+  margin: 0px;
+  padding: 0px;
+}
+.lista__item--body .marcar-leitura__toggler bth-icone {
+  font-size: 16px;
+  color: var(--bth-app-gray-dark-20);
+  margin-top: 4px;
+}
+.lista__item--body section {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 15px);
+  margin-right: 12px;
+}
+.lista__item--body section .title {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.lista__item--body section .message {
+  font-size: 13px;
+  color: var(--bth-app-gray-dark-20);
+}
+.lista__item--footer {
+  margin-top: 8px;
+  display: inline-block;
+  font-size: 12px;
+  color: var(--bth-app-gray-dark-10);
+}
+.lista__item--footer .float-right {
+  float: right;
+}
+.lista__item--footer a {
+  color: var(--bth-app-blue);
+  text-decoration: none;
+}
+.lista__item--footer a:hover {
+  color: var(--bth-app-blue-dark-10);
+  text-decoration: underline;
+}

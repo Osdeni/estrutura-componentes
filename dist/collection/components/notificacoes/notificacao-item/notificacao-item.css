@@ -1,0 +1,146 @@
+*,
+*:after,
+*:before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+* {
+  font-family: var(--bth-app-font-family-primary);
+}
+
+a:focus {
+  outline: 1px dotted var(--bth-app-gray-dark-30);
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 6px;
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bth-app-gray-light-30);
+}
+::-webkit-scrollbar-corner {
+  background: var(--bth-app-gray-light-40);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--bth-app-gray);
+  border-radius: 1px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.notificacao {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--bth-app-gray-light-10);
+  padding: 12px 8px;
+}
+.notificacao:hover, .notificacao:focus {
+  background-color: var(--bth-app-gray-light-30);
+}
+.notificacao--unread {
+  cursor: pointer;
+}
+.notificacao__body {
+  display: flex;
+}
+.notificacao__body .icon {
+  width: 34px;
+  display: flex;
+  justify-content: center;
+  margin-right: 12px;
+  margin-top: -5px;
+  font-size: 28px;
+  color: var(--bth-app-blue);
+}
+.notificacao__body .mensagem {
+  width: calc(100% - 15px);
+  margin: 2px 12px 8px 0px;
+}
+.notificacao__body .marcar-leitura__toggler {
+  font-size: 16px;
+  color: var(--bth-app-gray-dark-20);
+  margin-top: 4px;
+}
+.notificacao__progress {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.notificacao__progress__bar {
+  height: 4px;
+  transition: width var(--bth-app-transition-delay) linear;
+}
+.notificacao__progress__bar:before {
+  background-color: var(--bth-app-blue);
+  content: "";
+  display: block;
+  height: 4px;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+.notificacao__progress__bar:after {
+  background-color: var(--bth-app-gray-light-10);
+  content: "";
+  height: 4px;
+  left: 0;
+  position: absolute;
+  transform: translateY(-4px);
+  width: 100%;
+  z-index: 1;
+}
+.notificacao__progress__percent {
+  color: var(--bth-app-gray-dark-30);
+  font-size: 12px;
+  font-weight: var(--bth-app-font-weight-semi-bold);
+  text-align: center;
+  width: 100%;
+}
+.notificacao__progress__description {
+  color: var(--bth-app-gray-dark-30);
+  display: flex;
+  font-size: 12px;
+  font-weight: 500;
+  justify-content: space-between;
+  line-height: 12px;
+  margin-top: 2px;
+}
+.notificacao__progress--indeterminate .notificacao__progress__bar:after {
+  transform: translateY(0);
+}
+.notificacao__progress--indeterminate .notificacao__progress__bar:before {
+  animation: indeterminate-animation 2s infinite ease-in-out;
+  position: absolute;
+}
+.notificacao__footer {
+  margin-top: 8px;
+  display: inline-block;
+  font-size: 12px;
+  color: var(--bth-app-gray-dark-10);
+}
+.notificacao__footer .float-right {
+  float: right;
+}
+.notificacao__footer a {
+  color: var(--bth-app-blue);
+  text-decoration: none;
+}
+.notificacao__footer a:hover {
+  color: var(--bth-app-blue-dark-10);
+  text-decoration: underline;
+}
+
+@keyframes indeterminate-animation {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}

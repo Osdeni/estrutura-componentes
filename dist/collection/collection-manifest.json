@@ -1,0 +1,32 @@
+{
+  "entries": [
+    "./components/ajuda/ajuda.js",
+    "./components/app/app.js",
+    "./components/app/menu-ferramenta/menu-ferramenta.js",
+    "./components/app/menu-ferramenta-icone/menu-ferramenta-icone.js",
+    "./components/app/menu-horizontal-item/menu-horizontal-item.js",
+    "./components/app/menu-painel-lateral/menu-painel-lateral.js",
+    "./components/app/menu-vertical-item/menu-vertical-item.js",
+    "./components/comuns/avatar/avatar.js",
+    "./components/comuns/empty-state/empty-state.js",
+    "./components/comuns/icone/icone.js",
+    "./components/comuns/loader/loader.js",
+    "./components/comuns/navbar-pill/navbar-pill-group/navbar-pill-group.js",
+    "./components/comuns/navbar-pill/navbar-pill-item/navbar-pill-item.js",
+    "./components/comuns/selecao-contexto/selecao-contexto.js",
+    "./components/conta-usuario/conta-usuario.js",
+    "./components/marca-produto/marca-produto.js",
+    "./components/notificacoes/notificacoes.js",
+    "./components/notificacoes/notificacao-item/notificacao-item.js",
+    "./components/novidades/novidades.js",
+    "./components/novidades/novidade-item/novidade-item.js",
+    "./components/utilitarios/utilitarios.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "1.17.3",
+    "typescriptVersion": "3.9.7"
+  },
+  "collections": [],
+  "bundles": []
+}
